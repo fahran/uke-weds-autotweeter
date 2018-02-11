@@ -1,0 +1,21 @@
+{
+  "name": "ukulele-twitter-bot",
+  "version": "1.0.0",
+  "description": "Automatically tweets random requests to @ukewednesdays.",
+  "main": "uke-twitter-bot.js",
+  "dependencies": {
+    "dotenv": "^5.0.0",
+    "twitter-node-client": "0.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "twitter",
+    "lambda",
+    "ukulele"
+  ],
+  "author": "Fahran Wallace",
+  "license": "MIT"
+}
