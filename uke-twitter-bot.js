@@ -24,7 +24,15 @@ exports.handler = (event, context, callback) => {
     const song = songs[Math.floor(Math.random()*songs.length)];
     console.log("Song is: " + song.title);
     twitter.postTweet({"status": song.title}, error, success);
-    callback(null, responses.success("Successfully requested: " + song.song));
+    var responseBody = "Successfully requested: " + song.title;
+    callback(null, {
+        statusCode: 200,
+        headers: {
+          'Content-Type': 'application/json', 
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: responseBody
+    })
 };
 
 function tweetTest() {
@@ -153,3 +161,31 @@ const songs = [
 ]
 
 // tweet();
+
+const responses = {
+  success: (data={}, code=200) => {
+    return {
+      'statusCode': code,
+      'headers': responseHeaders,
+      'body': JSON.stringify(data)
+    }
+  },
+  error: (error) => {
+    return {
+      'statusCode': error.code || 500,
+      'headers': responseHeaders,
+      'body': JSON.stringify(error)
+    }
+  }
+}
+
+const responseHeaders = {
+  'Content-Type': 'application/json',
+  // Required for CORS support to work
+  'Access-Control-Allow-Origin': '*',  
+  // Required for cookies, authorization headers with HTTPS
+  'Access-Control-Allow-Credentials': true
+}
+
+
+
