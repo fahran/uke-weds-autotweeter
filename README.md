@@ -26,7 +26,7 @@ twitterConsumerSecret=BBBBBBBBBBBBBBB
 ```
 
 ### Notes on code quality
-Written in a few hours, most of which was trying to make API Gateway do CORS properly. There are no tests. Plenty of boilerplate is copy/pasted from docs. There code is of very questionable quality (globals, horrible function ordering, missing comments/explanations, bad comments, inconsistent formatting...you get the picture.) You get the picture. Disposable code is fun.
+Written in a few hours, most of which was trying to make API Gateway do CORS properly. There are no tests. Plenty of boilerplate is copy/pasted from docs. The code is of very questionable quality (globals, horrible function ordering, missing comments/explanations, bad comments, inconsistent formatting...) You get the picture. Disposable code is fun.
 
 ### Things Learned
 * Having an infinite scrolling list of songs can be convenient, but a bit much. Either set the timings slower (~10 mins?), or be happy to ignore it quite a bit.
